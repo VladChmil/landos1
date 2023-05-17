@@ -167,48 +167,60 @@ position: relative;
 
 </head>
 <body>
-<script type="text/javascript" src="//lzkjt.rdtk.io/track.js"></script>
+    <script type="text/javascript" src="//lzkjt.rdtk.io/track.js"></script>
     <div class="container">
-       <div id="initial-content">
-    <div class="circle-gif"></div>
-    <div class="warning-text">
-        <b>WARNING!</b><br>
-        You will see nude photos. Please be discreet.
+        <div id="initial-content">
+            <div class="circle-gif"></div>
+            <div class="warning-text">
+                <b>WARNING!</b><br>
+                You will see nude photos. Please be discreet.
+            </div>
+            <button class="continue-button button" onclick="showContent()">CONTINUE</button>
+        </div>
+        <div id="content" style="display: none;">
+            <h2>You must follow the RULES given below</h2>
+            <ul class="justified-text">
+                <li>If you see someone you know, DO NOT publicize it. Do not spread rumors.</li>
+                <li>When having sex with one of our members, it is your responsibility to protect yourself against STDs.</li>
+                <li>Respect sexual desires of other members. Our members are normal men and women, not pornstars or prostitutes.</li>
+            </ul>
+            <div class="button-wrapper">
+                <button class="agree-button button" onclick="checkRedirect()">I AGREE</button>
+            </div>
+        </div>
     </div>
-    <button class="continue-button button" onclick="showContent()">CONTINUE</button>
-</div>
-<div id="content" style="display: none;">
-    <h2>You must follow the RULES given below</h2>
-    <ul class="justified-text">
-        <li>If you see someone you know, DO NOT publicize it. Do not spread rumors.</li>
-        <li>When having sex with one of our members, it is your responsibility to protect yourself against STDs.</li>
-        <li>Respect sexual desires of other members. Our members are normal men and women, not pornstars or prostitutes.</li>
-    </ul>
-<div class="button-wrapper">
-    <button class="agree-button button" onclick="redirectToOffer()">I AGREE</button>
-</div>
-    </div>
-<script type="text/javascript">
-    if (!window.location.search.includes('rtkcmpid')) {
-        window.location.href = 'https://i.gifer.com/R4hS.gif';
-    }
 
-    function showContent() {
-        var initialContent = document.getElementById('initial-content');
-        var newContent = document.getElementById('content');
+    <script type="text/javascript">
+        function checkRedirect() {
+            var queryString = window.location.search;
 
-        initialContent.style.opacity = '0';
-        newContent.style.display = 'block';
+            if (!queryString.includes('rtkcmpid')) {
+                redirectToDefaultURL();
+            } else {
+                redirectToOffer();
+            }
+        }
 
-        setTimeout(function () {
-            initialContent.style.display = 'none';
-            newContent.style.opacity = '1';
-        }, 150);
-    }
+        function redirectToDefaultURL() {
+            window.location.href = 'https://i.gifer.com/R4hS.gif';
+        }
 
-    function redirectToOffer() {
-        window.location.href = 'https://lzkjt.rdtk.io/click';
-    }
-</script>
+        function redirectToOffer() {
+            window.location.href = 'https://lzkjt.rdtk.io/click';
+        }
+
+        function showContent() {
+            var initialContent = document.getElementById('initial-content');
+            var newContent = document.getElementById('content');
+
+            initialContent.style.opacity = '0';
+            newContent.style.display = 'block';
+
+            setTimeout(function () {
+                initialContent.style.display = 'none';
+                newContent.style.opacity = '1';
+            }, 150);
+        }
+    </script>
 </body>
 </html>
