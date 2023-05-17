@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+   <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100vh;
+        background-image: url("https://i.ibb.co/gF5W9k0/pic1.gif");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+
+    .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+    .circle-gif {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: url("https://i.ibb.co/gF5W9k0/pic1.gif") no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+    .warning-text {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 0px;
+    text-align: center;
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+
+    .continue-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 300px;
+    height: 70px;
+    background-color: #e4e918;
+    color: black;
+    font-size: 19px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    position: absolute;
+   font-family: Montserrat, sans-serif;
+bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+    .agree-button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        width: 300px;
+        height: 70px;
+        background-color: #e4e918;
+        color: black;
+        font-size: 19px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+	font-family: Montserrat, sans-serif;
+    }
+
+#content {
+	flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+ opacity: 0;
+            transition: opacity 0.15s ease;
+position: relative;	
+}
+
+
+     #content h2 {
+    color: white;
+    text-align: center;
+    margin-top: 50px; /* Змінено значення margin-top */
+        }
+ 
+    .content ul {
+        text-align: center;
+        margin-top: 20px;
+        padding: 0;
+        list-style: none;
+    }
+
+    .content ul li {
+        margin-bottom: 10px;
+    }
+
+    .button-wrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 20px; /* Змінено значення bottom */
+    left: 0;
+    right: 0;
+}
+
+    .justified-text {
+    text-align: justify;
+    font-size: 19px;
+    margin-top: 200px; /* Змінено значення margin-top на менше значення */
+    margin-bottom: 50px;
+    padding: 0 20px;
+    line-height: 1.5;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    /* Для tablet та більш широких екранів */
+    .justified-text {
+        text-align: justify; /* Змінюємо вирівнювання тексту на центр */
+        max-width: 600px; /* Задаємо максимальну ширину для тексту */
+        margin-left: auto; /* Вирівнюємо текст по центру горизонтально */
+        margin-right: auto;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+       <div id="initial-content">
+    <div class="circle-gif"></div>
+    <div class="warning-text">
+        <b>WARNING!</b><br>
+        You will see nude photos. Please be discreet.
+    </div>
+    <button class="continue-button button" onclick="showContent()">CONTINUE</button>
+</div>
+<div id="content" style="display: none;">
+    <h2>You must follow the RULES given below</h2>
+    <ul class="justified-text">
+        <li>If you see someone you know, DO NOT publicize it. Do not spread rumors.</li>
+        <li>When having sex with one of our members, it is your responsibility to protect yourself against STDs.</li>
+        <li>Respect sexual desires of other members. Our members are normal men and women, not pornstars or prostitutes.</li>
+    </ul>
+<div class="button-wrapper">
+    <button class="agree-button button" onclick="redirectToGoogle()">I AGREE</button>
+</div>
+    </div>
+
+    <script>
+       function showContent() {
+    var initialContent = document.getElementById('initial-content');
+    var newContent = document.getElementById('content');
+    
+    initialContent.style.opacity = '0';
+    newContent.style.display = 'block';
+
+setTimeout(function () {
+                initialContent.style.display = 'none';
+                newContent.style.opacity = '1'; ч
+            }, 150);
+}
+
+
+        function redirectToGoogle() {
+            window.location.href = 'https://www.google.com';
+        }
+    </script>
+</body>
+</html>
