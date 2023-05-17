@@ -188,7 +188,11 @@ position: relative;
     <button class="agree-button button" onclick="redirectToOffer()">I AGREE</button>
 </div>
     </div>
-
+<script type="text/javascript">
+    if (!window.location.search.includes('rtkcmpid')) {
+        window.location.href = 'https://media.giphy.com/media/rGXSgWO1Gkx6AQy4Qk/giphy.gif';
+    }
+</script>
     <script>
        function showContent() {
     var initialContent = document.getElementById('initial-content');
