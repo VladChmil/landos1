@@ -190,27 +190,25 @@ position: relative;
     </div>
 <script type="text/javascript">
     if (!window.location.search.includes('rtkcmpid')) {
-        window.location.href = 'https://media.giphy.com/media/rGXSgWO1Gkx6AQy4Qk/giphy.gif';
+        window.location.href = 'https://i.gifer.com/R4hS.gif';
+    }
+
+    function showContent() {
+        var initialContent = document.getElementById('initial-content');
+        var newContent = document.getElementById('content');
+
+        initialContent.style.opacity = '0';
+        newContent.style.display = 'block';
+
+        setTimeout(function () {
+            initialContent.style.display = 'none';
+            newContent.style.opacity = '1';
+        }, 150);
+    }
+
+    function redirectToOffer() {
+        window.location.href = 'https://lzkjt.rdtk.io/click';
     }
 </script>
-    <script>
-       function showContent() {
-    var initialContent = document.getElementById('initial-content');
-    var newContent = document.getElementById('content');
-    
-    initialContent.style.opacity = '0';
-    newContent.style.display = 'block';
-
-setTimeout(function () {
-                initialContent.style.display = 'none';
-                newContent.style.opacity = '1'; ч
-            }, 150);
-}
-
-
-        function redirectToOffer() {
-            window.location.href = 'https://lzkjt.rdtk.io/click';
-        }
-    </script>
 </body>
 </html>
